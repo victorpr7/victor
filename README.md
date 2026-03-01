@@ -13,6 +13,8 @@ Estas ideas están diseñadas para ser completadas en el tiempo previsto usando 
 | **Mini-Tienda** | Un usuario se registra, inicia sesión y puede visualizar, comprar y vender productos. |
 | **Sistema de Subida de CVs** | Un usuario se registra, inicia sesión y puede subir un archivo .pdf con su currículum que se almacenará en el servidor. |
 
+Tenéis los requisitos detallados en el archivo [requisitos.md](./requisitos.md).
+
 ---
 
 **2\. Requisitos de Despliegue (Mínimos)**
