@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"> <title>Tienda Segura Pro</title>
+</head>
+<body>
+    <div class="container">
+        <section id="auth-section">
+            <div class="auth-wrapper card" style="flex-direction: column; max-width: 500px; margin: 50px auto;">
+                <div class="tabs">
+                    <button onclick="cambiarAuth('login')" id="btn-auth-l" class="active">Ya tengo cuenta</button>
+                    <button onclick="cambiarAuth('registro')" id="btn-auth-r">Soy nuevo aquí</button>
+                </div>
+        
+                <div id="box-login">
+                    <h3 style="text-align:center">Bienvenido de nuevo</h3>
+                    <input type="email" id="loginUser" placeholder="Tu Email (@gmail.com)">
+                    <input type="password" id="loginPass" placeholder="Contraseña">
+                    <button onclick="login()">Entrar a la tienda</button>
+                </div>
+        
+                <div id="box-registro" style="display:none;">
+                    <h3 style="text-align:center">Crea tu cuenta</h3>
+                    <input type="email" id="regUser" placeholder="Nuevo Email (@gmail.com)">
+                    <input type="password" id="regPass" placeholder="Crea una contraseña">
+                    <button onclick="crearCuenta()" style="background: var(--purple);">Registrarme ahora</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="tienda-section" style="display:none;">
+            <header>
+                <h2 id="user-display"></h2>
+                <button onclick="location.reload()">Cerrar Sesión</button>
+            </header>
+        
+            <div class="card profile-selector">
+                <h3>¿Qué deseas hacer hoy?</h3>
+                <div class="tabs">
+                    <button onclick="cambiarPerfil('vendedor')" id="btn-vendedor">Panel de Vendedor</button>
+                    <button onclick="cambiarPerfil('comprador')" id="btn-comprador">Ir a Comprar</button>
+                </div>
+            </div>
+        
+            <div id="vista-vendedor" style="display:none;">
+                <div class="card card-vendedor">
+                    <h3>Gestión de Mis Productos</h3>
+                    <button onclick="agregarProducto()" style="width:auto">+ Subir Nuevo Producto</button>
+                </div>
+                <div id="mis-productos-grid" class="grid"></div>
+            </div>
+        
+            <div id="vista-comprador" style="display:none;">
+                <div id="productos-grid" class="grid"></div>
+                
+                <div id="carrito" class="card">
+                    <h3>🛒 Tu Carrito</h3>
+                    <ul id="lista-carrito"></ul>
+                    <p><strong>Total: <span id="total-precio">0</span>€</strong></p>
+                    <input type="text" id="num-tarjeta" placeholder="Tarjeta (16 dígitos)" maxlength="16">
+                    <button onclick="procesarPago()">Pagar Ahora</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
