@@ -1,0 +1,155 @@
+/* 1. VARIABLES Y CONFIGURACIÓN BASE */
+:root {
+    --bg-general: #e2e8f0;      /* Fondo unificado */
+    --primary: #2563eb;         /* Azul Login */
+    --purple: #8b5cf6;          /* Morado Registro */
+    --vendedor-bg: #f0f9ff;     /* Azul clarito Panel Vendedor */
+    --comprador-bg: #f0fdf4;    /* Verde clarito Panel Comprador */
+    --success: #10b981;         /* Verde Botón Pago */
+    --danger: #ef4444;          /* Rojo Botón Eliminar */
+    --dark: #1e293b;            /* Texto y Header */
+}
+
+body {
+    background-color: var(--bg-general);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    color: var(--dark);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    padding: 20px 0;
+}
+
+/* 2. DISEÑO DE LAS TARJETAS (CARDS) */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* 3. AUTENTICACIÓN (LOGIN Y REGISTRO) */
+#auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+#auth-section .card {
+    border-top: 6px solid var(--primary);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* 4. SELECTOR DE PERFIL (VENDEDOR/COMPRADOR) */
+.profile-selector {
+    text-align: center;
+    border-bottom: 2px solid #cbd5e1;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tabs button {
+    flex: 1;
+    background: #cbd5e1;
+    color: var(--dark);
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tabs button.active {
+    background: var(--dark);
+    color: white;
+}
+
+/* 5. COLORES ESPECÍFICOS POR APARTADO */
+#vista-vendedor .card {
+    background-color: var(--vendedor-bg);
+    border-left: 6px solid var(--primary);
+}
+
+#vista-comprador .card {
+    background-color: var(--comprador-bg);
+    border-left: 6px solid var(--success);
+}
+
+/* 6. GRID DE PRODUCTOS RESPONSIVO */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.prod-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.prod-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+}
+
+.prod-card h4 { margin: 10px 0; font-size: 1.2rem; }
+.prod-card p { color: var(--primary); font-size: 1.4rem; font-weight: bold; }
+
+/* 7. BOTONES Y FORMULARIOS */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: opacity 0.2s;
+}
+
+button:hover { opacity: 0.9; }
+
+/* Botones con colores específicos */
+#box-registro button { background: var(--purple); }
+#carrito button { background: var(--success); }
+.prod-card button[style*="background:red"] { background: var(--danger) !important; }
+
+header.card {
+    background: var(--dark);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
